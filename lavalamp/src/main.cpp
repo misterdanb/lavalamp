@@ -278,14 +278,14 @@ Color dots(Vec3 p, double t)
     lastT += 1.;
   }
 
-  Color c = Color { r: 200.0, g: 0.0, b: 0.0 };
+  Color c = Color { r: 200, g: 0, b: 0 };
 
   if ((p - v).len() < 2.0)
   {
     return c;
   }
 
-  return Color { r: 0.0, g: 0.0, b: 0.0 };
+  return Color { r: 0, g: 0, b: 0 };
 }
 
 Color police(Vec3 p, double t)
@@ -297,10 +297,10 @@ Color police(Vec3 p, double t)
   {
     double b = (2.0 - d.len()) / 2.0;
     uint8_t colB = uint8_t(256.0 * clamp(b * b, 0.0, 0.9));
-    return Color { r: 0.0, g: 0.0, b: colB };
+    return Color { r: 0, g: 0, b: colB };
   }
 
-  return { r: 0.0, g: 0.0, b: 0.0 };
+  return { r: 0, g: 0, b: 0 };
 }
 
 void render(Color (*render_func)(Vec3, double))
